@@ -16,17 +16,14 @@ class Pair:
         self.first = first
         self.second = second
 
-    def display(self):
-        print(f'Большая пара чисел {self.first} {self.second}')
-
     def comparison(self, other):
         if isinstance(other, Pair):
             if self.first > other.first:
-                print(True)
+                return True
             elif self.first == other.first and self.second > other.second:
-                print(True)
+                return True
             else:
-                print(False)
+                return False
 
 
 class Fraction(Pair):
@@ -34,21 +31,15 @@ class Fraction(Pair):
     def comparison(self, other):
         if isinstance(other, Fraction):
             if self.first > other.first:
-                return Fraction(self.first, self.second)
+                return True
             elif self.first == other.first and self.second > other.second:
-                return Fraction(self.first, self.second)
-            elif self.first < other.first:
-                return Fraction(other.first, other.second)
-            elif self.first == other.first and self.second < other.second:
-                return Fraction(other.first, other.second)
-            elif self.first == other.first and self.second == other.second:
-                return Fraction(self.first, self.second)
+                return True
 
 
 if __name__ == '__main__':
     num1 = Pair(45, 68)
     num2 = Pair(44, 99)
-    num1.comparison(num2)
+    print(num1.comparison(num2))
     fraction1 = Fraction(6, 78)
     fraction2 = Fraction(4, 58)
-    fraction1.comparison(fraction2).display()
+    print(fraction1.comparison(fraction2))
