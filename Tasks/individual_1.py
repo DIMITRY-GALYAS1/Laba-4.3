@@ -27,13 +27,7 @@ class Pair:
 
 
 class Fraction(Pair):
-
-    def comparison(self, other):
-        if isinstance(other, Fraction):
-            if self.first > other.first:
-                return True
-            elif self.first == other.first and self.second > other.second:
-                return True
+    pass
 
 
 if __name__ == '__main__':
