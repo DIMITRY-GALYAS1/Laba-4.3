@@ -29,6 +29,8 @@ class Pair:
                 return Pair(other.first, other.second)
             elif self.first == other.first and self.second < other.second:
                 return Pair(other.first, other.second)
+            elif self.first == other.first and self.second == other.second:
+                return Fraction(self.first, self.second)
 
 
 class Fraction(Pair):
